@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  transition: background-color 0.4s, color 0.4s;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.container {
+  padding-top: 100px;
+}
+
+.toggle {
+  position: relative;
+  margin: 40px auto;
+  width: 240px;
+  height: 70px;
+  background: #fcb045;
+  border-radius: 35px;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.toggle.night {
+  background: linear-gradient(to right, #141e30, #243b55);
+}
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: left 0.4s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+
+.toggle.night .circle {
+  left: 175px;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  75% { transform: translateX(-5px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes glowFlash {
+  0% { opacity: 0.8; }
+  50% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.toggle.shake {
+  animation: shake 0.4s;
+}
+
+.toggle.glow-effect .glow {
+  animation: glowFlash 0.4s ease-out;
+}
+
+.toggle.gradient-effect {
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+  background-size: 300% 300%;
+  animation: gradientMove 1.5s ease-in-out forwards;
+}
+
+.glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-45deg);
+  animation: none;
+  z-index: 1;
+}
