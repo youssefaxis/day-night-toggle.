@@ -11,12 +11,12 @@ function toggleMode() {
     body.style.backgroundColor = '#121212';
     body.style.color = '#ffffff';
     toggle.classList.add('night');
-    label.textContent = 'Night Mode 🌙';
+    label.textContent = 'Night Mode ';
   } else {
     body.style.backgroundColor = '#ffffff';
     body.style.color = '#000000';
     toggle.classList.remove('night');
-    label.textContent = 'Day Mode ☀️';
+    label.textContent = 'Day Mode ';
   }
 
   toggle.classList.add('shake');
@@ -27,5 +27,5 @@ function toggleMode() {
     toggle.classList.remove('shake');
     toggle.classList.remove('glow-effect');
     toggle.classList.remove('gradient-effect');
-  }, 15000);
+  }, 1500);
 }
