@@ -27,5 +27,5 @@ function toggleMode() {
     toggle.classList.remove('shake');
     toggle.classList.remove('glow-effect');
     toggle.classList.remove('gradient-effect');
-  }, 1500);
+  }, 200);
 }
